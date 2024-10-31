@@ -1,7 +1,5 @@
 import "./style.css";
 
-console.log("esta bien");
-
 const divClases = [
   "container",
   "search",
