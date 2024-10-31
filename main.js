@@ -35,24 +35,39 @@ const createLi = (textoIntroducido) => {
 };
 
 const ul = document.querySelector("ul");
-
 const inputContent = document.querySelector("input");
-
 let count = 0;
+
 botonMas.addEventListener("click", (event) => {
   event.preventDefault();
   const introducido = inputContent.value;
+
   if (introducido != "") {
     count += 1;
     const newLi = createLi(introducido);
     ul.appendChild(newLi);
-
     inputContent.value = "";
-
-    const allSpans = document.querySelectorAll("span");
-    const lastSpan = allSpans[allSpans.length - 1];
-    lastSpan.textContent = count;
-
+    contador();
   }
-  
+
+  comprobarTask(count);
+});
+
+const contador = () => {
+  const allSpans = document.querySelectorAll("span");
+  const lastSpan = allSpans[allSpans.length - 1];
+  lastSpan.textContent = count;
+};
+
+const comprobarTask = (count) => {
+  if (count > 0) {
+    const allP = document.querySelectorAll("p");
+    const lastP = allP[allP.length - 1];
+    lastP.textContent = "";
+  }
+};
+
+const allBotonesX = document.querySelectorAll(".btn-delete");
+allBotonesX.forEach((boton) => {
+  boton.addEventListener("click", () => {});
 });
