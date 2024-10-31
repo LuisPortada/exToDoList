@@ -67,7 +67,3 @@ const comprobarTask = (count) => {
   }
 };
 
-const allBotonesX = document.querySelectorAll(".btn-delete");
-allBotonesX.forEach((boton) => {
-  boton.addEventListener("click", () => {});
-});
